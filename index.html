@@ -46,7 +46,7 @@ p {
   border-radius: 16px;
 }
 
-/* ▼ 通常写真（トリミングあり） */
+/* 通常写真 */
 .photo {
   width: 100%;
   height: 100%;
@@ -58,7 +58,7 @@ p {
   transition: 0.5s;
 }
 
-/* ▼ 1枚目だけノーカット */
+/* 1枚目ノーカット */
 .photo-first {
   height: auto;
   aspect-ratio: auto;
@@ -194,6 +194,58 @@ button:hover {
   padding: 12px;
   border-radius: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 32px 16px;
+  }
+
+  .section {
+    margin: 40px 0;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 18px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .photo-wrap {
+    margin: 24px 0;
+    border-radius: 14px;
+  }
+
+  form {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 16px;
+  }
+
+  .price-note {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    margin-top: 48px;
+  }
+}
 </style>
 </head>
 
@@ -212,7 +264,7 @@ button:hover {
 
 <!-- 1枚目（ノーカット） -->
 <div class="photo-wrap">
-<img src="img/photo1.jpg" class="photo photo-first" alt="お花と和菓子" width="720" height="480">
+<img src="img/photo1.jpg" class="photo" alt="お花と和菓子" width="720" height="480">
 </div>
 
 <!-- 2枚目以降（トリミング） -->
