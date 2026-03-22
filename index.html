@@ -14,14 +14,12 @@ body {
   line-height: 1.8;
 }
 
-/* コンテンツ */
 .container {
   max-width: 720px;
   margin: auto;
   padding: 60px 20px;
 }
 
-/* タイトル */
 h1 {
   text-align: center;
   font-weight: normal;
@@ -29,7 +27,6 @@ h1 {
   margin-bottom: 40px;
 }
 
-/* セクション */
 .section {
   margin: 70px 0;
 }
@@ -38,7 +35,6 @@ p {
   text-align: center;
 }
 
-/* 写真ラップ */
 .photo-wrap {
   position: relative;
   margin: 40px 0;
@@ -46,7 +42,6 @@ p {
   border-radius: 16px;
 }
 
-/* 通常写真 */
 .photo {
   width: 100%;
   height: 100%;
@@ -58,7 +53,6 @@ p {
   transition: 0.5s;
 }
 
-/* 1枚目ノーカット */
 .photo-first {
   height: auto;
   aspect-ratio: auto;
@@ -66,7 +60,6 @@ p {
   object-position: center;
 }
 
-/* 空気感 */
 .photo-wrap::after {
   content: "";
   position: absolute;
@@ -78,7 +71,6 @@ p {
   pointer-events: none;
 }
 
-/* ホバー */
 .photo:hover {
   transform: scale(1.03);
 }
@@ -97,7 +89,12 @@ h2 {
   margin-bottom: 24px;
 }
 
-/* フォーム */
+.catch {
+  margin: 80px 0 40px;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+}
+
 form {
   background: rgba(255,255,255,0.96);
   padding: 28px;
@@ -146,6 +143,10 @@ textarea {
   color: #333;
 }
 
+.select-wrap select:invalid {
+  color: #777;
+}
+
 .select-wrap::after {
   content: "▼";
   position: absolute;
@@ -165,7 +166,15 @@ textarea {
   color: #555;
 }
 
-/* ボタン */
+.policy-note {
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  line-height: 2;
+  color: #666;
+}
+
 button {
   width: 100%;
   padding: 14px;
@@ -174,13 +183,13 @@ button {
   border-radius: 999px;
   cursor: pointer;
   font-family: inherit;
+  color: #333;
 }
 
 button:hover {
   background: #c4d6bd;
 }
 
-/* フッター */
 .footer {
   text-align: center;
   font-size: 12px;
@@ -193,6 +202,10 @@ button:hover {
   background: #fff;
   padding: 12px;
   border-radius: 20px;
+}
+
+.allergy-field {
+  min-height: 72px;
 }
 
 @media screen and (max-width: 768px) {
@@ -262,12 +275,10 @@ button:hover {
 </p>
 </div>
 
-<!-- 1枚目（ノーカット） -->
 <div class="photo-wrap">
 <img src="img/photo1.jpg" class="photo photo-first" alt="お花と和菓子" width="720" height="480">
 </div>
 
-<!-- 2枚目以降（トリミング） -->
 <div class="photo-wrap">
 <img src="img/photo2.jpg" class="photo" alt="お花のような和菓子" width="720" height="480">
 </div>
@@ -292,22 +303,31 @@ button:hover {
 </div>
 
 <div class="section">
-<p>
+<p class="catch">
 やわらかな光の中で、春を味わうひとときを。
 </p>
 </div>
 
 <div class="section">
+  <p>
+    中国茶と和菓子、三つの組み合わせを<br>
+    順に味わいながら、春の移ろいをたどります。
+  </p>
 
-<p>
-  季節の和菓子3種類（うち1種は体験）と<br>
-  中国茶5種類をご用意しております
-</p>
+  <p>
+    一皿ごとに、香りや余韻の違いを感じ、<br>
+    ゆっくりと感覚がひらいていく時間です。
+  </p>
 
-<p>
-  ゆったりと、味わう時間をお過ごしください
-</p>
+  <p>
+    途中、最後のひと手を添えていただく一皿もご用意しています。<br>
+    花がひらくように、そっと触れていただく小さな所作。
+  </p>
 
+  <p>
+    静かな流れの中で、<br>
+    味わうことそのものに意識が向いていきます。
+  </p>
 </div>
 
 <div class="section">
@@ -357,19 +377,32 @@ button:hover {
     <input type="hidden" name="_subject" value="春のピクニックお茶会 予約">
 
     <p class="price-note">
-      参加費：6,600円（税込）<br>
+      【参加費：6,600円（税込）】<br>
       ご都合のよい時間帯をお選びください<br>
       ① 14:00〜16:00<br>
       ② 17:00〜19:00
+    </p>
+
+    <p class="policy-note">
+      【キャンセルポリシー】<br>
+      ご予約後のキャンセルにつきましては、準備の都合上、<br>
+      開催日3日前よりキャンセル料を頂戴いたします。<br>
+      あらかじめご了承ください。
     </p>
 
     <input type="text" name="name" placeholder="お名前（必須）" aria-label="お名前" required>
     <input type="email" name="email" placeholder="メールアドレス（必須）" aria-label="メールアドレス" required>
     <input type="number" name="people" placeholder="人数（必須）" aria-label="人数" min="1" required>
 
-    <div class="select-wrap">
+        <textarea
+          name="allergy"
+          class="allergy-field"
+          placeholder="アレルギーがある場合はこちらにご記入ください（任意）"
+          aria-label="アレルギーの有無"></textarea>
+
+        <div class="select-wrap">
       <select name="time" aria-label="ご希望の時間帯" required>
-        <option value="" selected disabled>ご希望の時間帯を選択（必須）</option>
+        <option value="">ご希望の時間帯を選択（必須）</option>
         <option value="14:00-16:00">① 14:00-16:00</option>
         <option value="17:00-19:00">② 17:00-19:00</option>
       </select>
