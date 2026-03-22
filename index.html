@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>春のピクニックお茶会</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Hiragino Mincho ProN", serif;
+  background: #f7f6f2;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* コンテンツ */
+.container {
+  max-width: 720px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+/* タイトル */
+h1 {
+  text-align: center;
+  font-weight: normal;
+  letter-spacing: 0.18em;
+  margin-bottom: 40px;
+}
+
+/* セクション */
+.section {
+  margin: 70px 0;
+}
+
+p {
+  text-align: center;
+}
+
+/* 写真ラップ */
+.photo-wrap {
+  position: relative;
+  margin: 40px 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* ▼ 通常写真（トリミングあり） */
+.photo {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center 60%;
+  display: block;
+  filter: brightness(1.05) contrast(0.98);
+  transition: 0.5s;
+}
+
+/* ▼ 1枚目だけノーカット */
+.photo-first {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* 空気感 */
+.photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.04)
+  );
+  pointer-events: none;
+}
+
+/* ホバー */
+.photo:hover {
+  transform: scale(1.03);
+}
+
+.map-wrap {
+  margin-top: 24px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+h2 {
+  text-align: center;
+  font-weight: normal;
+  letter-spacing: 0.12em;
+  margin-bottom: 24px;
+}
+
+/* フォーム */
+form {
+  background: rgba(255,255,255,0.96);
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 8px 0 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 16px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+input,
+textarea {
+  color: #333;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.select-wrap {
+  position: relative;
+  margin: 8px 0 16px;
+}
+
+.select-wrap select {
+  margin: 0;
+  padding-right: 40px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  color: #777;
+}
+
+.select-wrap select:valid {
+  color: #333;
+}
+
+.select-wrap::after {
+  content: "▼";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: #999;
+  pointer-events: none;
+}
+
+.price-note {
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #555;
+}
+
+/* ボタン */
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: #d6e2d1;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:hover {
+  background: #c4d6bd;
+}
+
+/* フッター */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin-top: 80px;
+}
+
+
+.photo-wrap:first-of-type {
+  background: #fff;
+  padding: 12px;
+  border-radius: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>春のピクニック<br>お茶会</h1>
+
+<div class="section">
+<p>
+絵本『のばらの村のものがたり 春のピクニック』の世界をテーマにした<br>
+和菓子と中国茶のお茶会
+</p>
+</div>
+
+<!-- 1枚目（ノーカット） -->
+<div class="photo-wrap">
+<img src="img/photo1.jpg" class="photo photo-first" alt="お花と和菓子" width="720" height="480">
+</div>
+
+<!-- 2枚目以降（トリミング） -->
+<div class="photo-wrap">
+<img src="img/photo2.jpg" class="photo" alt="お花のような和菓子" width="720" height="480">
+</div>
+
+<div class="photo-wrap">
+<img src="img/photo3.jpg" class="photo" alt="和菓子職人の橋本愛" width="720" height="480">
+</div>
+
+<div class="photo-wrap">
+<img src="img/photo4.jpg" class="photo" alt="中国茶の茶器" width="720" height="480">
+</div>
+
+<!-- <div class="photo-wrap"> -->
+<!-- <img src="img/photo5.jpg" class="photo" alt="中国茶担当の小林美紀" width="720" height="480"> -->
+<!-- </div> -->
+
+<div class="section">
+<p>
+和菓子　橋本愛（はしもと いつみ）<br>
+中国茶　小林美紀（こばやし みき）
+</p>
+</div>
+
+<div class="section">
+<p>
+やわらかな光の中で、春を味わうひとときを。
+</p>
+</div>
+
+<div class="section">
+
+<p>
+  季節の和菓子3種類（うち1種は体験）と<br>
+  中国茶5種類をご用意しております
+</p>
+
+<p>
+  ゆったりと、味わう時間をお過ごしください
+</p>
+
+</div>
+
+<div class="section">
+  <h2 style="text-align:center; font-weight:normal;">会場案内</h2>
+
+  <p>
+  はたけもり COME Lab<br>
+  〒544-0025 大阪府大阪市生野区生野東3-1-8
+</p>
+
+<p>
+  JR大阪環状線「桃谷駅」より徒歩16分<br>
+  大阪シティバス「生野区役所前」停留所より徒歩3分
+</p>
+
+<p>
+  開催日：2026年4月26日（日）
+</p>
+
+<p>
+  ① 14:00〜16:00<br>
+  ② 17:00〜19:00<br>
+  各回 4名様限定
+</p>
+
+<p>
+  近隣にコインパーキングがございます
+</p>
+
+  <div class="map-wrap">
+    <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.1087341803222!2d135.5339821!3d34.651956799999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000de0e300a8c13%3A0xc42dc15eb831e1!2z44CSNTQ0LTAwMjUg5aSn6Ziq5bqc5aSn6Ziq5biC55Sf6YeO5Yy655Sf6YeO5p2x77yT5LiB55uu77yR4oiS77yY!5e0!3m2!1sja!2sjp!4v1774158122942!5m2!1sja!2sjp"
+  height="320"
+  style="width:100%; border:0;"
+  allowfullscreen
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  title="はたけもり COME Lab の地図">
+</iframe>
+  </div>
+</div>
+
+<div class="section">
+  <h2 style="text-align:center; font-weight:normal;">ご予約</h2>
+
+  <form action="https://formspree.io/f/xvzwnyao" method="POST">
+    <input type="hidden" name="_subject" value="春のピクニックお茶会 予約">
+
+    <p class="price-note">
+      参加費：6,600円（税込）<br>
+      ご都合のよい時間帯をお選びください<br>
+      ① 14:00〜16:00<br>
+      ② 17:00〜19:00
+    </p>
+
+    <input type="text" name="name" placeholder="お名前（必須）" aria-label="お名前" required>
+    <input type="email" name="email" placeholder="メールアドレス（必須）" aria-label="メールアドレス" required>
+    <input type="number" name="people" placeholder="人数（必須）" aria-label="人数" min="1" required>
+
+    <div class="select-wrap">
+      <select name="time" aria-label="ご希望の時間帯" required>
+        <option value="" selected disabled>ご希望の時間帯を選択（必須）</option>
+        <option value="14:00-16:00">① 14:00-16:00</option>
+        <option value="17:00-19:00">② 17:00-19:00</option>
+      </select>
+    </div>
+
+    <textarea
+      id="message"
+      name="message"
+      placeholder="ご質問・メッセージ（任意）"
+      aria-label="ご質問・メッセージ"></textarea>
+
+    <button type="submit">予約する</button>
+  </form>
+</div>
+
+<div class="footer">
+春のピクニックお茶会
+</div>
+
+</div>
+
+</body>
+</html>
