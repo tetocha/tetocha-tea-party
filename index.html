@@ -130,20 +130,38 @@ textarea {
 }
 
 .select-wrap select {
+  width: 100%;
   margin: 0;
-  padding-right: 40px;
+  padding: 12px 40px 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 16px;
+  box-sizing: border-box;
+  background: #fff;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
   color: #777;
+  -webkit-text-fill-color: #777;
 }
 
-.select-wrap select:valid {
+.select-wrap select:required:invalid {
+  color: #777;
+  -webkit-text-fill-color: #777;
+}
+
+.select-wrap select:required:valid {
+  color: #333;
+  -webkit-text-fill-color: #333;
+}
+
+.select-wrap select option {
   color: #333;
 }
 
-.select-wrap select:invalid {
+.select-wrap select option[value=""] {
   color: #777;
 }
 
@@ -427,11 +445,11 @@ button:hover {
           placeholder="アレルギーがある場合はこちらにご記入ください（任意）"
           aria-label="アレルギーの有無"></textarea>
 
-        <div class="select-wrap">
+    <div class="select-wrap">
       <select name="time" aria-label="ご希望の時間帯" required>
-        <option value="">ご希望の時間帯を選択（必須）</option>
-        <option value="14:00-16:00">① 14:00-16:00</option>
-        <option value="17:00-19:00">② 17:00-19:00</option>
+        <option value="" disabled selected hidden>ご希望の時間帯を選択（必須）</option>
+        <option value="14:00〜16:00">① 14:00〜16:00</option>
+        <option value="17:00〜19:00">② 17:00〜19:00</option>
       </select>
     </div>
 
