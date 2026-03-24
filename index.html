@@ -447,8 +447,16 @@ JR大阪環状線「桃谷駅」より徒歩16分<br>
 
     <input type="text" name="name" placeholder="お名前（必須）" aria-label="お名前" required>
     <input type="email" name="email" placeholder="メールアドレス（必須）" aria-label="メールアドレス" required>
-    <input type="number" name="people" placeholder="人数（必須）" aria-label="人数" min="1" required>
-
+    <input type="tel" name="phone" placeholder="電話番号（必須）" required>
+    <div class="select-wrap">
+      <select name="people" aria-label="人数" required>
+        <option value="" disabled selected hidden>人数（必須）</option>
+        <option value="1">1名</option>
+        <option value="2">2名</option>
+        <option value="3">3名</option>
+        <option value="4">4名</option>
+      </select>
+    </div>
         <textarea
           name="allergy"
           class="allergy-field"
@@ -457,7 +465,7 @@ JR大阪環状線「桃谷駅」より徒歩16分<br>
 
     <div class="select-wrap">
       <select name="time" aria-label="ご希望の時間帯" required>
-        <option value="" disabled selected hidden>ご希望の時間帯を選択（必須）</option>
+        <option value="" disabled selected hidden>ご希望の時間帯（必須）</option>
         <option value="14:00〜16:00">① 14:00〜16:00</option>
         <option value="17:00〜19:00">② 17:00〜19:00</option>
       </select>
